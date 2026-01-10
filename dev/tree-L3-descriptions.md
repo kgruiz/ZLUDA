@@ -187,6 +187,29 @@
 #### ext/rocm_smi-sys/src/
 - Overview — ROCm SMI bindings source.
 
+## format/
+- Overview — Formatting helpers for pretty-printing CUDA types and generated API arguments.
+- Cargo.toml — Manifest for the format crate.
+
+### format/src/
+- Overview — CudaDisplay trait implementations and generated formatters.
+- dark_api.rs — CudaDisplay implementations for dark API fatbin structs.
+- dnn8.rs — cuDNN v8 formatting glue that re-exports generated formatters.
+- dnn9.rs — cuDNN v9 formatting helpers with typed element printing.
+- format_generated.rs — Generated formatters for core CUDA types.
+- format_generated_blas.rs — Generated cuBLAS argument formatters.
+- format_generated_blaslt.rs — Generated cuBLASLt argument formatters.
+- format_generated_blaslt_internal.rs — Generated formatters for internal cuBLASLt APIs.
+- format_generated_dnn8.rs — Generated cuDNN v8 argument formatters.
+- format_generated_dnn9.rs — Generated cuDNN v9 argument formatters.
+- format_generated_fft.rs — Generated cuFFT argument formatters.
+- format_generated_nvml.rs — Generated NVML argument formatters.
+- format_generated_sparse.rs — Generated cuSPARSE argument formatters.
+- lib.rs — Core CudaDisplay trait and formatting implementations for common CUDA types.
+
+## geekbench.svg
+- Overview — SVG asset (likely a benchmark graphic) stored at repo root.
+
 ## llvm_zluda/
 - Overview — LLVM integration crate; builds/links LLVM via `build.rs` and exposes compile/FFI utilities.
 
