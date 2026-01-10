@@ -289,5 +289,32 @@
 ##### ptx/src/test/spirv_run/
 - Overview — SPIR-V run fixtures used in tests.
 
+## ptx_parser/
+- Overview — PTX parser crate that tokenizes and parses PTX into an AST.
+- Cargo.toml — Manifest for the PTX parser crate.
+
+### ptx_parser/src/
+- Overview — Parser implementation, AST definitions, and helpers.
+- ast.rs — PTX AST types and instruction definitions.
+- check_args.py — Helper script for validating parser argument definitions.
+- lib.rs — Core lexer/parser logic and PTX parsing entry points.
+
+## ptx_parser_macros/
+- Overview — Proc-macro crate for generating PTX instruction types and parsers.
+- Cargo.toml — Manifest for the parser macros crate.
+
+### ptx_parser_macros/src/
+- Overview — Macro implementations for opcode and instruction generation.
+- lib.rs — Main proc-macro logic and generation helpers.
+
+## ptx_parser_macros_impl/
+- Overview — Shared implementation crate for parser macro codegen.
+- Cargo.toml — Manifest for the parser macros implementation crate.
+
+### ptx_parser_macros_impl/src/
+- Overview — Parser/codegen helpers used by the proc-macro front end.
+- lib.rs — Code generation for instruction types, visitors, and display logic.
+- parser.rs — Syn-based parser for the opcode-definition DSL.
+
 ## zluda/
 - Overview — Main ZLUDA crate that builds the `nvcuda` cdylib and houses core CUDA-replacement logic plus OS-specific code.
