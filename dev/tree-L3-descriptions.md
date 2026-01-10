@@ -84,6 +84,14 @@
 - bundled_bindings.rs — Pre-generated bindgen output for Detours APIs.
 - lib.rs — Windows-only crate entry that includes bundled bindings and a test hook example.
 
+## dev/
+- Overview — Project notes and documentation used for onboarding/explaining ZLUDA internals.
+- diagram.md — Mermaid flowchart of ZLUDA’s main execution paths (driver API, PTX compile, library shims).
+- explain.md — High-level “three jobs” explanation with call flow pointers.
+- explanation.md — Expanded, glossary-style walkthrough of ZLUDA architecture and call flows.
+- tree-L3.txt — Raw `tree -L 3` snapshot of the repository.
+- tree-L3-descriptions.md — This file: structured descriptions of the tree snapshot.
+
 ## docs/
 - Overview — mdBook documentation sources and configuration for the ZLUDA docs site.
 
