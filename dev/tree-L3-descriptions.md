@@ -198,9 +198,13 @@
 
 #### ext/highs-sys/src/
 - Overview — highs-sys bindings and crate source.
+- c_bindings.rs — Bindgen-generated HiGHS C API bindings.
+- lib.rs — High-level constants and re-exports for HiGHS bindings.
 
 #### ext/highs-sys/tests/
 - Overview — highs-sys tests.
+- test_highs_call.rs — Basic call smoke test for HiGHS API.
+- test_highs_functions.rs — Tests for HiGHS function wrappers.
 
 ### ext/hip_runtime-sys/
 - Overview — Raw HIP runtime FFI bindings crate.
