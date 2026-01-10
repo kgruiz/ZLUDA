@@ -457,6 +457,17 @@
 - cufft_wraper.h — cuFFT wrapper header for extended APIs.
 - decompile_cublaslt_internal.py — Ghidra script to emit cuBLASLt internal prototypes.
 
+#### zluda_bindgen/build/cudnn_v8/
+- Overview — Split cuDNN v8 headers used for bindgen.
+- cudnn_adv_infer.h — cuDNN advanced inference APIs.
+- cudnn_adv_train.h — cuDNN advanced training APIs.
+- cudnn_backend.h — cuDNN backend descriptor APIs.
+- cudnn_cnn_infer.h — cuDNN CNN inference APIs.
+- cudnn_cnn_train.h — cuDNN CNN training APIs.
+- cudnn_ops_infer.h — cuDNN ops inference APIs.
+- cudnn_ops_train.h — cuDNN ops training APIs.
+- cudnn_version.h — cuDNN version macros.
+
 ### zluda_bindgen/src/
 - Overview — Bindgen driver and generated process-address table.
 - main.rs — Generates bindings for CUDA/ROCm libs and lookup tables.
