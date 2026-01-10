@@ -285,10 +285,18 @@
 ### llvm_zluda/src/
 - Overview — LLVM wrapper modules, compiler pipeline, and FFI helpers.
 - compile.rs — Links PTX/OCML/OCKL bitcode, runs LLVM passes, and emits AMDGPU objects/ELF via LLD.
+- device-libs/ — Prebuilt AMD device library bitcode blobs and license.
 - ffi.rs — Extra LLVM C-API extensions and helpers used by ZLUDA.
 - lib.cpp — C++ shims compiled into `llvm_zluda_cpp` for LLVM extensions.
 - lib.rs — Crate entry that re-exports LLVM sys bindings and modules.
 - utils.rs — Safe wrappers around LLVM context/module/target machine and object utilities.
+
+#### llvm_zluda/src/device-libs/
+- Overview — AMD device library bitcode blobs and licensing.
+- LICENSE.TXT — University of Illinois/NCSA Open Source License text for device libs.
+- ockl.bc — AMD OpenCL kernel library bitcode.
+- ocml.bc — AMD OpenCL math library bitcode.
+- README.md — Notes on device library provenance and license.
 
 ## ptx/
 - Overview — PTX translation/processing crate; depends on `ptx_parser`/`llvm_zluda` and includes PTX implementation bitcode.
