@@ -225,6 +225,69 @@
 
 ## ptx/
 - Overview — PTX translation/processing crate; depends on `ptx_parser`/`llvm_zluda` and includes PTX implementation bitcode.
+- Cargo.toml — Manifest for the PTX translation crate and its dependencies.
+
+### ptx/lib/
+- Overview — Bundled PTX implementation artifacts.
+- zluda_ptx_impl.bc — Prebuilt LLVM bitcode for PTX helper implementations.
+- zluda_ptx_impl.cpp — C++ source for the PTX helper bitcode.
+
+### ptx/src/
+- Overview — PTX lowering pipeline and tests.
+- lib.rs — Exports the PTX-to-LLVM entry points and types.
+
+#### ptx/src/pass/
+- Overview — PTX lowering/normalization passes and LLVM emission.
+- deparamize_functions.rs — Rewrites kernel parameters into explicit function args.
+- expand_operands.rs — Expands complex operands into simpler forms.
+- fix_special_registers.rs — Normalizes PTX special registers into helper calls.
+- hoist_globals.rs — Moves globals into a consistent module layout.
+- insert_explicit_load_store.rs — Makes memory operations explicit.
+- insert_implicit_conversions.rs — Inserts required type conversions.
+- insert_post_saturation.rs — Applies post-saturation logic where needed.
+- mod.rs — Pass orchestration and `to_llvm_module` pipeline.
+- normalize_basic_blocks.rs — Normalizes basic block structure.
+- normalize_identifiers.rs — Normalizes identifiers for consistent naming.
+- normalize_predicates.rs — Normalizes predicate usage.
+- remove_unreachable_basic_blocks.rs — Prunes unreachable control flow.
+- replace_instructions_with_functions.rs — Lowers PTX instructions into helper calls.
+- replace_instructions_with_functions_fp_required.rs — Lowers instructions requiring FP helpers.
+- replace_known_functions.rs — Replaces known function patterns.
+- resolve_function_pointers.rs — Resolves PTX function pointer usage.
+
+##### ptx/src/pass/instruction_mode_to_global_mode/
+- Overview — Pass and fixtures for converting instruction mode to global mode.
+- mod.rs — Instruction-mode to global-mode transformation logic.
+- test.rs — Tests for instruction-mode conversion.
+
+##### ptx/src/pass/llvm/
+- Overview — LLVM emission utilities.
+- attributes.rs — Builds LLVM IR for GPU attributes.
+- emit.rs — Main PTX-to-LLVM IR emission logic.
+- mod.rs — Module wiring for LLVM emission.
+
+##### ptx/src/pass/test/
+- Overview — Test helpers for pass pipeline.
+
+#### ptx/src/test/
+- Overview — PTX samples and expected outputs for testing.
+- _Z9vectorAddPKfS0_Pfi.ptx — PTX fixture for vector add kernel.
+- mod.rs — Test harness for PTX fixtures.
+- operands.ptx — PTX fixture covering operand handling.
+- vectorAdd_11.ptx — PTX fixture for vector add variant.
+- vectorAdd_kernel64.ptx — PTX fixture for 64-bit kernel variant.
+
+##### ptx/src/test/ll/
+- Overview — Expected LLVM IR outputs for tests.
+
+##### ptx/src/test/spirv_build/
+- Overview — SPIR-V build fixtures used in tests.
+
+##### ptx/src/test/spirv_fail/
+- Overview — SPIR-V failure fixtures used in tests.
+
+##### ptx/src/test/spirv_run/
+- Overview — SPIR-V run fixtures used in tests.
 
 ## zluda/
 - Overview — Main ZLUDA crate that builds the `nvcuda` cdylib and houses core CUDA-replacement logic plus OS-specific code.
