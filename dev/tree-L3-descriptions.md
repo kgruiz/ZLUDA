@@ -40,6 +40,24 @@
 - lib.rs — Proc-macro definitions for choosing overrides, normalizing names, and a test helper macro.
 - nvml.rs — Generated extern declarations for NVML functions.
 
+## cuda_types/
+- Overview — CUDA/ROCm type and API bindings used across the project.
+- Cargo.toml — Manifest for CUDA type definitions and ROCm/HIP sys dependencies.
+
+### cuda_types/src/
+- Overview — Module definitions for CUDA library types and FFI structs.
+- cublas.rs — Generated CUDA cuBLAS type/FFI definitions.
+- cublaslt.rs — Generated CUDA cuBLASLt type/FFI definitions.
+- cuda.rs — Generated CUDA driver API types and constants.
+- cudnn.rs — Generated CUDA cuDNN type/FFI definitions (generic layer).
+- cudnn8.rs — Generated CUDA cuDNN v8 type/FFI definitions.
+- cudnn9.rs — Generated CUDA cuDNN v9 type/FFI definitions.
+- cufft.rs — Generated CUDA cuFFT type/FFI definitions.
+- cusparse.rs — Generated CUDA cuSPARSE type/FFI definitions.
+- dark_api.rs — Handwritten structs/flags for CUDA fatbin headers and related internal formats.
+- lib.rs — Module exports for the CUDA type/FFI surface.
+- nvml.rs — Generated NVML type/FFI definitions.
+
 ## docs/
 - Overview — mdBook documentation sources and configuration for the ZLUDA docs site.
 
