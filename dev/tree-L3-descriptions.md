@@ -107,6 +107,86 @@
 ## ext/
 - Overview — Third-party and FFI “sys” dependencies (detours, ROCm/HIP, HiGHS, LLVM project, etc.).
 
+### ext/detours/
+- Overview — Upstream Microsoft Detours source tree for Windows API hooking/instrumentation.
+- CREDITS.TXT — Credits and acknowledgements for Detours contributors.
+- LICENSE.md — MIT license for Detours.
+- Makefile — Make-based build rules for Detours.
+- README.md — Detours overview, platform notes, and build guidance.
+- system.mak — Shared makefile settings for Detours builds.
+
+#### ext/detours/samples/
+- Overview — Sample programs demonstrating Detours usage.
+
+#### ext/detours/src/
+- Overview — Detours C/C++ source code.
+
+#### ext/detours/tests/
+- Overview — Detours test programs.
+
+#### ext/detours/vc/
+- Overview — Visual Studio project files for Detours.
+
+### ext/HiGHS/
+- Overview — HiGHS linear optimization solver source (vendored as a submodule).
+
+### ext/highs-sys/
+- Overview — Rust sys crate for HiGHS with build/discovery logic.
+- build.rs — Builds HiGHS via CMake and sets link flags.
+- Cargo.toml — Manifest and feature flags for highs-sys.
+- install-dependencies.sh — Helper script to install CMake/stdlib dependencies.
+- README.md — Usage and build instructions for highs-sys/HiGHS.
+- wrapper.h — C wrapper header for bindgen (HiGHS C API include).
+
+#### ext/highs-sys/src/
+- Overview — highs-sys bindings and crate source.
+
+#### ext/highs-sys/tests/
+- Overview — highs-sys tests.
+
+### ext/hip_runtime-sys/
+- Overview — Raw HIP runtime FFI bindings crate.
+- build.rs — Platform-specific linker directives for HIP runtime.
+- Cargo.toml — Manifest for hip_runtime-sys.
+
+#### ext/hip_runtime-sys/src/
+- Overview — HIP runtime bindings source.
+
+### ext/hipblaslt-sys/
+- Overview — Raw hipBLASLt FFI bindings crate.
+- build.rs — Linker directives for hipBLASLt.
+- Cargo.toml — Manifest for hipblaslt-sys.
+
+#### ext/hipblaslt-sys/src/
+- Overview — hipBLASLt bindings source.
+
+### ext/llvm-project/
+- Overview — LLVM source tree (vendored as a submodule).
+
+### ext/miopen-sys/
+- Overview — Raw MIOpen FFI bindings crate.
+- build.rs — Linker directives for MIOpen.
+- Cargo.toml — Manifest for miopen-sys.
+
+#### ext/miopen-sys/src/
+- Overview — MIOpen bindings source.
+
+### ext/rocblas-sys/
+- Overview — Raw rocBLAS FFI bindings crate.
+- build.rs — Linker directives for rocBLAS.
+- Cargo.toml — Manifest for rocblas-sys.
+
+#### ext/rocblas-sys/src/
+- Overview — rocBLAS bindings source.
+
+### ext/rocm_smi-sys/
+- Overview — Raw ROCm SMI FFI bindings crate.
+- build.rs — Linker directives for ROCm SMI.
+- Cargo.toml — Manifest for rocm_smi-sys.
+
+#### ext/rocm_smi-sys/src/
+- Overview — ROCm SMI bindings source.
+
 ## llvm_zluda/
 - Overview — LLVM integration crate; builds/links LLVM via `build.rs` and exposes compile/FFI utilities.
 
