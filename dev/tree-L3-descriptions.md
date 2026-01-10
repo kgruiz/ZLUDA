@@ -366,3 +366,252 @@
 - os_win.rs — Windows-specific implementation helpers.
 - pointer.rs — Pointer attribute/query APIs.
 - stream.rs — Stream creation/synchronization APIs.
+
+## zluda_bindgen/
+- Overview — Binding generator for CUDA/ROCm headers and related helper tables.
+- Cargo.toml — Manifest for the bindgen utility crate.
+
+### zluda_bindgen/build/
+- Overview — Wrapper headers and scripts for generating bindings.
+- cublas_wrapper.h — cuBLAS header wrapper plus required typedef tweaks.
+- cublasLt_internal.h — Generated internal cuBLASLt signatures (from Ghidra script).
+- cuda_wrapper.h — Aggregated CUDA headers with internal API version flag.
+- cudnn_v8/ — cuDNN v8 header stubs used for bindgen.
+- cufft_wraper.h — cuFFT wrapper header for extended APIs.
+- decompile_cublaslt_internal.py — Ghidra script to emit cuBLASLt internal prototypes.
+
+### zluda_bindgen/src/
+- Overview — Bindgen driver and generated process-address table.
+- main.rs — Generates bindings for CUDA/ROCm libs and lookup tables.
+- process_table.rs — Generated cuGetProcAddress table mapping names/versions to functions.
+
+## zluda_blas/
+- Overview — cuBLAS shim that forwards to rocBLAS.
+- build.rs — Windows delay-load flags for rocBLAS.
+- Cargo.toml — Manifest for the cuBLAS shim library.
+
+### zluda_blas/src/
+- Overview — cuBLAS API exports and implementations.
+- impl.rs — rocBLAS-backed implementations and handle management.
+- lib.rs — Exported cuBLAS symbols and normalization/dispatch.
+
+## zluda_blaslt/
+- Overview — cuBLASLt shim that forwards to hipBLASLt.
+- build.rs — Windows delay-load flags for hipBLASLt.
+- Cargo.toml — Manifest for the cuBLASLt shim library.
+
+### zluda_blaslt/src/
+- Overview — cuBLASLt API exports and implementations.
+- impl.rs — hipBLASLt-backed implementations and handle management.
+- lib.rs — Exported cuBLASLt symbols and normalization/dispatch.
+
+## zluda_cache/
+- Overview — SQLite-backed cache for compiled modules and metadata.
+- Cargo.toml — Manifest for the cache crate.
+- diesel.toml — Diesel CLI configuration for schema generation.
+
+### zluda_cache/migrations/
+- Overview — Diesel migrations for the cache schema.
+
+#### zluda_cache/migrations/2025-08-04-203347_create_initial/
+- Overview — Initial cache schema migration files.
+
+### zluda_cache/src/
+- Overview — Cache API, models, and Diesel schema.
+- lib.rs — Cache open/insert/query logic and migrations.
+- models.rs — Diesel insertable structs.
+- schema.rs — Diesel schema definitions.
+
+## zluda_common/
+- Overview — Shared utilities for handle validation, conversions, and fatbin helpers.
+- Cargo.toml — Manifest for the common utilities crate.
+
+### zluda_common/src/
+- Overview — Common types and conversion helpers.
+- lib.rs — Core utilities (FromCuda, ZludaObject, constants, helpers).
+
+## zluda_dnn/
+- Overview — cuDNN shim core that maps to MIOpen.
+- Cargo.toml — Manifest for shared cuDNN shim logic.
+
+### zluda_dnn/src/
+- Overview — cuDNN API dispatch and MIOpen-backed implementation.
+- impl.rs — MIOpen-backed operations and caching helpers.
+- lib.rs — cuDNN API export wiring across v8/v9.
+
+## zluda_dnn8/
+- Overview — cuDNN v8 shim cdylib wrapper.
+- build.rs — Windows delay-load flags for MIOpen/HIP.
+- Cargo.toml — Manifest for the cuDNN v8 shim.
+
+### zluda_dnn8/src/
+- Overview — cuDNN v8 symbol exports.
+- lib.rs — Re-exports v8 symbols from zluda_dnn with delay-load hooks.
+
+## zluda_dnn9/
+- Overview — cuDNN v9 shim cdylib wrapper.
+- build.rs — Windows delay-load flags for MIOpen/HIP.
+- Cargo.toml — Manifest for the cuDNN v9 shim.
+
+### zluda_dnn9/src/
+- Overview — cuDNN v9 symbol exports.
+- lib.rs — Re-exports v9 symbols from zluda_dnn with delay-load hooks.
+
+## zluda_fft/
+- Overview — cuFFT shim stub (mostly unimplemented).
+- Cargo.toml — Manifest for the cuFFT shim.
+
+### zluda_fft/src/
+- Overview — cuFFT exports and stubs.
+- impl.rs — Unimplemented cuFFT return stubs.
+- lib.rs — cuFFT symbol exports routed to stubs.
+
+## zluda_inject/
+- Overview — Windows injector/launcher for redirecting CUDA DLLs.
+- build.rs — Builds helper test binaries in debug on Windows.
+- Cargo.toml — Manifest for the injector tool.
+
+### zluda_inject/src/
+- Overview — CLI parsing and injection logic.
+- args.rs — Command-line parsing and library path configuration.
+- bin.rs — Detours-based process creation and DLL injection.
+- main.rs — Windows-only entrypoint wiring.
+- win.rs — Windows error utilities and OS helpers.
+
+### zluda_inject/tests/
+- Overview — Integration tests for injection workflows.
+
+#### zluda_inject/tests/helpers/
+- Overview — Helper test executables used by injection tests.
+
+#### zluda_inject/tests/inject.rs
+- Overview — Test harness validating injected trace behavior.
+
+## zluda_ld/
+- Overview — Linux LD_AUDIT library that redirects CUDA-related shared libraries.
+- Cargo.toml — Manifest for the LD audit shim.
+
+### zluda_ld/src/
+- Overview — LD_AUDIT hook implementations.
+- lib.rs — la_objsearch/la_objopen hooks and redirection logic.
+
+## zluda_ml/
+- Overview — NVML shim (ROCm SMI on Unix, stubbed on Windows).
+- Cargo.toml — Manifest for the NVML shim.
+
+### zluda_ml/src/
+- Overview — NVML API exports and OS-specific implementations.
+- impl_common.rs — Shared helpers, error strings, and PCI parsing.
+- impl_unix.rs — ROCm SMI-backed NVML implementation.
+- impl_win.rs — Windows stubs for NVML APIs.
+- lib.rs — NVML exports and dispatch to implementations.
+
+## zluda_precompile/
+- Overview — CLI tool to scan binaries and precompile CUDA fatbins with ZLUDA.
+- Cargo.toml — Manifest for the precompile tool.
+
+### zluda_precompile/src/
+- Overview — CLI and parallel precompile logic.
+- main.rs — Scans files, extracts fatbins, and precompiles with ZLUDA.
+
+## zluda_redirect/
+- Overview — Windows Detours-based DLL redirection layer.
+- Cargo.toml — Manifest for the redirect library.
+
+### zluda_redirect/src/
+- Overview — Hook implementations for LoadLibrary/CreateProcess redirection.
+- lib.rs — Detours hooks and override path logic.
+
+## zluda_sparse/
+- Overview — cuSPARSE shim stub (mostly unimplemented).
+- Cargo.toml — Manifest for the cuSPARSE shim.
+
+### zluda_sparse/src/
+- Overview — cuSPARSE exports and stubs.
+- impl.rs — Unimplemented cuSPARSE function stubs.
+- lib.rs — cuSPARSE symbol exports routed to stubs.
+
+## zluda_trace/
+- Overview — CUDA driver trace shim that logs calls and module data.
+- Cargo.toml — Manifest for the trace driver library.
+
+### zluda_trace/src/
+- Overview — Trace wrappers, logging, and OS glue.
+- dark_api.rs — Dark API trace helpers and formatting.
+- lib.rs — CUDA API wrappers with logging and dynamic dispatch.
+- log.rs — Log entry structures and formatting helpers.
+- os_unix.rs — Unix dynamic loading helpers for trace.
+- os_win.rs — Windows dynamic loading helpers for trace.
+- trace.rs — Module extraction and trace file writing.
+
+## zluda_trace_blas/
+- Overview — cuBLAS trace shim that logs and forwards calls.
+- Cargo.toml — Manifest for cuBLAS trace shim.
+
+### zluda_trace_blas/src/
+- Overview — cuBLAS trace wrappers.
+- lib.rs — Loads real cuBLAS and logs calls via trace export table.
+
+## zluda_trace_blaslt/
+- Overview — cuBLASLt trace shim that logs and forwards calls.
+- Cargo.toml — Manifest for cuBLASLt trace shim.
+
+### zluda_trace_blaslt/src/
+- Overview — cuBLASLt trace wrappers.
+- lib.rs — Loads real cuBLASLt and logs calls via trace export table.
+
+## zluda_trace_common/
+- Overview — Shared utilities for all trace shims.
+- Cargo.toml — Manifest for trace common utilities.
+
+### zluda_trace_common/src/
+- Overview — Export-table lookup and status formatting helpers.
+- lib.rs — Trace helpers, OS-specific loading, and status formatting.
+
+## zluda_trace_dnn8/
+- Overview — cuDNN v8 trace shim that logs and forwards calls.
+- Cargo.toml — Manifest for cuDNN v8 trace shim.
+
+### zluda_trace_dnn8/src/
+- Overview — cuDNN v8 trace wrappers.
+- lib.rs — Loads real cuDNN v8 and logs calls via trace export table.
+
+## zluda_trace_dnn9/
+- Overview — cuDNN v9 trace shim that logs and forwards calls.
+- Cargo.toml — Manifest for cuDNN v9 trace shim.
+
+### zluda_trace_dnn9/src/
+- Overview — cuDNN v9 trace wrappers.
+- lib.rs — Loads real cuDNN v9 and logs calls via trace export table.
+
+## zluda_trace_fft/
+- Overview — cuFFT trace shim that logs and forwards calls.
+- Cargo.toml — Manifest for cuFFT trace shim.
+
+### zluda_trace_fft/src/
+- Overview — cuFFT trace wrappers.
+- lib.rs — Loads real cuFFT and logs calls via trace export table.
+
+## zluda_trace_nvml/
+- Overview — NVML trace shim that logs and forwards calls.
+- Cargo.toml — Manifest for NVML trace shim.
+
+### zluda_trace_nvml/src/
+- Overview — NVML trace wrappers.
+- lib.rs — Loads real NVML and logs calls via trace export table.
+
+## zluda_trace_sparse/
+- Overview — cuSPARSE trace shim that logs and forwards calls.
+- Cargo.toml — Manifest for cuSPARSE trace shim.
+
+### zluda_trace_sparse/src/
+- Overview — cuSPARSE trace wrappers.
+- lib.rs — Loads real cuSPARSE and logs calls via trace export table.
+
+## zluda_windows/
+- Overview — Windows-specific library metadata and delay-load helpers.
+- Cargo.toml — Manifest for Windows helper crate.
+
+### zluda_windows/src/
+- Overview — Windows library lookup and GUID metadata.
+- lib.rs — Library metadata table and helper functions for redirection/injection.
