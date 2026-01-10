@@ -324,5 +324,13 @@
 - Overview — ptxas CLI implementation.
 - main.rs — CLI parser and passthrough implementation.
 
+## xtask/
+- Overview — Build orchestration tool for compiling and packaging ZLUDA artifacts.
+- Cargo.toml — Manifest for the xtask helper binary.
+
+### xtask/src/
+- Overview — Build/packaging logic for workspace outputs.
+- main.rs — CLI for build/zip commands, profiles, and packaging logic for Windows/Linux.
+
 ## zluda/
 - Overview — Main ZLUDA crate that builds the `nvcuda` cdylib and houses core CUDA-replacement logic plus OS-specific code.
