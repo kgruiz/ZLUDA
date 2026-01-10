@@ -334,3 +334,35 @@
 
 ## zluda/
 - Overview — Main ZLUDA crate that builds the `nvcuda` cdylib and houses core CUDA-replacement logic plus OS-specific code.
+- Cargo.toml — Manifest for the main ZLUDA driver library.
+- build.rs — Build script that emits version metadata and Windows delay-load settings.
+
+### zluda/bin/
+- Overview — Extra binary assets shipped with the driver on Windows.
+- nvcudart_hybrid64.dll — CUDA runtime hybrid DLL used for Windows compatibility.
+
+### zluda/src/
+- Overview — Driver API exports, OS glue, and test harness.
+- lib.rs — Exported CUDA Driver API symbols and dispatch to implementation modules.
+- os_unix.rs — Unix library loading helper.
+- os_win.rs — Windows DLL load/DelayLoad hooks and cleanup.
+- tests.rs — Test harness comparing CUDA vs ZLUDA API behavior.
+
+#### zluda/src/impl/
+- Overview — CUDA Driver API implementations split by subsystem.
+- context.rs — Context management and related APIs.
+- device.rs — Device enumeration and properties APIs.
+- driver.rs — Driver initialization and version APIs.
+- event.rs — Event creation and timing APIs.
+- function.rs — Kernel/function lookup and metadata APIs.
+- graph.rs — CUDA graph APIs.
+- hipfix.rs — HIP interop/workaround helpers.
+- kernel.rs — Kernel launch helpers and argument handling.
+- library.rs — cuLibrary APIs and module management helpers.
+- memory.rs — Memory allocation and copy APIs.
+- mod.rs — Module wiring and unimplemented handling.
+- module.rs — Module loading/compilation APIs.
+- os_unix.rs — Unix-specific implementation helpers.
+- os_win.rs — Windows-specific implementation helpers.
+- pointer.rs — Pointer attribute/query APIs.
+- stream.rs — Stream creation/synchronization APIs.
