@@ -117,6 +117,40 @@
 
 #### ext/detours/samples/
 - Overview — Sample programs demonstrating Detours usage.
+- comeasy/ — Detours sample project (COM-focused example).
+- commem/ — Detours sample project (COM/memory-related example).
+- common.mak — Shared make definitions for Detours samples.
+- cping/ — Detours sample project (ping-style test).
+- disas/ — Detours sample project (disassembler example).
+- dtest/ — Detours sample project (test harness).
+- dumpe/ — Detours sample project (export table dump).
+- dumpi/ — Detours sample project (import table dump).
+- dynamic_alloc/ — Detours sample project (dynamic allocation example).
+- echo/ — Detours sample project (echo example).
+- einst/ — Detours sample project (Einstein example).
+- excep/ — Detours sample project (exception handling example).
+- findfunc/ — Detours sample project (function lookup example).
+- impmunge/ — Detours sample project (import table munging).
+- Makefile — Build rules for Detours samples.
+- member/ — Detours sample project (member-function example).
+- opengl/ — Detours sample project (OpenGL example).
+- README.TXT — Build/run instructions for Detours samples.
+- region/ — Detours sample project (memory region example).
+- setdll/ — Detours sample project (DLL injection/setting).
+- simple/ — Detours sample project (simple usage example).
+- slept/ — Detours sample project (Sleep API hook example).
+- syelog/ — Detours sample project (syelog logging).
+- talloc/ — Detours sample project (allocation example).
+- traceapi/ — Detours sample project (API tracing).
+- tracebld/ — Detours sample project (build tracing).
+- tracelnk/ — Detours sample project (linker tracing).
+- tracemem/ — Detours sample project (memory tracing).
+- tracereg/ — Detours sample project (registry tracing).
+- traceser/ — Detours sample project (serial I/O tracing).
+- tracessl/ — Detours sample project (SSL tracing).
+- tracetcp/ — Detours sample project (TCP tracing).
+- tryman/ — Detours sample project (manual tracing example).
+- withdll/ — Detours sample project (launch with DLL injected).
 
 #### ext/detours/src/
 - Overview — Detours C/C++ source code.
