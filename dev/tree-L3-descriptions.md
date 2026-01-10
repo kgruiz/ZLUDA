@@ -316,5 +316,13 @@
 - lib.rs — Code generation for instruction types, visitors, and display logic.
 - parser.rs — Syn-based parser for the opcode-definition DSL.
 
+## ptxas/
+- Overview — Minimal stub of the CUDA `ptxas` tool, currently copying input to output.
+- Cargo.toml — Manifest for the ptxas binary crate.
+
+### ptxas/src/
+- Overview — ptxas CLI implementation.
+- main.rs — CLI parser and passthrough implementation.
+
 ## zluda/
 - Overview — Main ZLUDA crate that builds the `nvcuda` cdylib and houses core CUDA-replacement logic plus OS-specific code.
