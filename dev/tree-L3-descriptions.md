@@ -16,6 +16,30 @@
 - error.rs — Compiler-specific error type and conversions from PTX/parser errors.
 - main.rs — CLI entry point that parses options, reads PTX, generates LLVM/bitcode, and invokes `llvm_zluda` compilation (with optional HIP arch detection).
 
+## cuda_base/
+- Overview — Directory present in the tree snapshot with no tracked files at depth 3.
+
+## cuda_macros/
+- Overview — Proc-macro crate that generates CUDA-family extern declarations and normalizes API naming.
+- Cargo.toml — Manifest for the proc-macro crate and its parsing/quote dependencies.
+
+### cuda_macros/build/
+- Overview — Wrapper headers used for generating bindings.
+- wrapper.h — Aggregates CUDA/VDPAU headers and enables internal API versioning for binding generation.
+
+### cuda_macros/src/
+- Overview — Proc-macro implementation plus generated extern declarations.
+- cublas.rs — Generated extern declarations for cuBLAS functions.
+- cublaslt.rs — Generated extern declarations for cuBLASLt functions.
+- cublaslt_internal.rs — Bindgen-generated extern declarations for internal cuBLASLt functions.
+- cuda.rs — Generated extern declarations for the CUDA driver API.
+- cudnn8.rs — Generated extern declarations for cuDNN v8 functions.
+- cudnn9.rs — Generated extern declarations for cuDNN v9 functions.
+- cufft.rs — Generated extern declarations for cuFFT functions.
+- cusparse.rs — Generated extern declarations for cuSPARSE functions.
+- lib.rs — Proc-macro definitions for choosing overrides, normalizing names, and a test helper macro.
+- nvml.rs — Generated extern declarations for NVML functions.
+
 ## docs/
 - Overview — mdBook documentation sources and configuration for the ZLUDA docs site.
 
