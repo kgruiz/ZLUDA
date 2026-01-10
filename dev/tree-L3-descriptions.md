@@ -222,6 +222,7 @@
 
 #### ext/hipblaslt-sys/src/
 - Overview — hipBLASLt bindings source.
+- lib.rs — Bindgen-generated hipBLASLt API bindings.
 
 ### ext/llvm-project/
 - Overview — LLVM source tree (vendored as a submodule).
@@ -233,6 +234,7 @@
 
 #### ext/miopen-sys/src/
 - Overview — MIOpen bindings source.
+- lib.rs — Bindgen-generated MIOpen API bindings.
 
 ### ext/rocblas-sys/
 - Overview — Raw rocBLAS FFI bindings crate.
@@ -241,6 +243,7 @@
 
 #### ext/rocblas-sys/src/
 - Overview — rocBLAS bindings source.
+- lib.rs — Bindgen-generated rocBLAS API bindings.
 
 ### ext/rocm_smi-sys/
 - Overview — Raw ROCm SMI FFI bindings crate.
@@ -249,6 +252,7 @@
 
 #### ext/rocm_smi-sys/src/
 - Overview — ROCm SMI bindings source.
+- lib.rs — Bindgen-generated ROCm SMI API bindings.
 
 ## format/
 - Overview — Formatting helpers for pretty-printing CUDA types and generated API arguments.
