@@ -171,6 +171,13 @@
 
 #### ext/detours/tests/
 - Overview — Detours test programs.
+- catch.hpp — Catch2 single-header test framework (vendored).
+- corruptor.cpp — Unit test image corruptor implementation.
+- corruptor.h — Unit test image corruptor declarations.
+- main.cpp — Unit test runner entry point.
+- Makefile — Build rules for Detours unit tests.
+- test_image_api.cpp — Unit tests for Detours image API.
+- test_module_api.cpp — Unit tests for Detours module API.
 
 #### ext/detours/vc/
 - Overview — Visual Studio project files for Detours.
