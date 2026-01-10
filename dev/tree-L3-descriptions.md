@@ -154,6 +154,20 @@
 
 #### ext/detours/src/
 - Overview — Detours C/C++ source code.
+- creatwth.cpp — Process creation with DLL injection support.
+- detours.cpp — Core Detours implementation.
+- detours.h — Core Detours public header declarations.
+- detver.h — Detours version and build metadata.
+- disasm.cpp — Shared disassembler implementation for Detours.
+- disolarm.cpp — ARM offline disassembler wrapper.
+- disolarm64.cpp — ARM64 offline disassembler wrapper.
+- disolia64.cpp — IA64 offline disassembler wrapper.
+- disolx64.cpp — x64 offline disassembler wrapper.
+- disolx86.cpp — x86 offline disassembler wrapper.
+- image.cpp — PE image manipulation helpers.
+- Makefile — Build rules for Detours source library.
+- modules.cpp — Module enumeration helpers.
+- uimports.cpp — Import table modification helpers.
 
 #### ext/detours/tests/
 - Overview — Detours test programs.
