@@ -213,6 +213,7 @@
 
 #### ext/hip_runtime-sys/src/
 - Overview — HIP runtime bindings source.
+- lib.rs — Bindgen-generated HIP runtime API bindings.
 
 ### ext/hipblaslt-sys/
 - Overview — Raw hipBLASLt FFI bindings crate.
