@@ -94,6 +94,15 @@
 
 ## docs/
 - Overview — mdBook documentation sources and configuration for the ZLUDA docs site.
+- book.toml — mdBook configuration (title, authors, source dir).
+
+### docs/src/
+- Overview — Markdown content for the docs site.
+- building.md — Build prerequisites and basic build commands.
+- faq.md — FAQ covering support scope, roadmap, and hardware/software questions.
+- quick_start.md — Download/usage instructions for Windows and Linux.
+- SUMMARY.md — mdBook table of contents.
+- troubleshooting.md — zluda_trace usage, logging, and troubleshooting guide.
 
 ## ext/
 - Overview — Third-party and FFI “sys” dependencies (detours, ROCm/HIP, HiGHS, LLVM project, etc.).
