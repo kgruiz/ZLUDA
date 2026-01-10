@@ -332,6 +332,8 @@
 
 ##### ptx/src/pass/instruction_mode_to_global_mode/
 - Overview — Pass and fixtures for converting instruction mode to global mode.
+- call_with_mode.ptx — PTX fixture for instruction-mode handling.
+- fold_denormal.ptx — PTX fixture for denormal folding behavior.
 - mod.rs — Instruction-mode to global-mode transformation logic.
 - test.rs — Tests for instruction-mode conversion.
 
