@@ -503,6 +503,8 @@
 
 #### zluda_cache/migrations/2025-08-04-203347_create_initial/
 - Overview — Initial cache schema migration files.
+- down.sql — Drops the cache tables (rollback).
+- up.sql — Creates the initial cache schema tables.
 
 ### zluda_cache/src/
 - Overview — Cache API, models, and Diesel schema.
