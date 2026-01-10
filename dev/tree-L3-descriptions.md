@@ -181,6 +181,9 @@
 
 #### ext/detours/vc/
 - Overview — Visual Studio project files for Detours.
+- Detours.sln — Visual Studio solution for building Detours.
+- Detours.vcxproj — Visual Studio project definition for Detours.
+- Detours.vcxproj.filters — Visual Studio filters file for project organization.
 
 ### ext/HiGHS/
 - Overview — HiGHS linear optimization solver source (vendored as a submodule).
