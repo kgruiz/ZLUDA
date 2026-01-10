@@ -1,3 +1,5 @@
+# ZLUDA's 3 main jobs
+
 1. Export the CUDA Driver API (the “front door”)
 
 * What it is: a shared library that exports the same CUDA Driver API function symbols (exported function names the program links to) that NVIDIA normally provides in `nvcuda.dll` (Windows) or `libcuda.so` (Linux).
