@@ -58,6 +58,32 @@
 - lib.rs — Module exports for the CUDA type/FFI surface.
 - nvml.rs — Generated NVML type/FFI definitions.
 
+## dark_api/
+- Overview — Internal/undocumented CUDA “dark API” interfaces and fatbin tooling.
+- Cargo.toml — Manifest for the dark_api crate and its compression/format dependencies.
+
+### dark_api/src/
+- Overview — Implementation of dark API tables and fatbin parsing helpers.
+- fatbin.rs — High-level parser for fatbin wrappers/submodules with decompression helpers.
+- lib.rs — Macro-driven dark API tables, GUID mapping, formatting helpers, and integrity-check logic.
+
+## detours-sys/
+- Overview — Rust FFI bindings to Microsoft Detours (Windows-only hooking/injection).
+- Cargo.toml — Manifest and crate metadata for detours-sys.
+- LICENSE-APACHE — Apache 2.0 license text for detours-sys.
+- LICENSE-MIT — MIT license text for detours-sys.
+- README.md — Usage notes and licensing for detours-sys.
+- build.rs — Windows-only build script compiling Detours C++ sources from `ext/detours`.
+
+### detours-sys/build/
+- Overview — Wrapper headers used for bindgen/build.
+- wrapper.h — Includes Windows and Detours headers for binding generation.
+
+### detours-sys/src/
+- Overview — Generated bindings and crate entrypoint.
+- bundled_bindings.rs — Pre-generated bindgen output for Detours APIs.
+- lib.rs — Windows-only crate entry that includes bundled bindings and a test hook example.
+
 ## docs/
 - Overview — mdBook documentation sources and configuration for the ZLUDA docs site.
 
