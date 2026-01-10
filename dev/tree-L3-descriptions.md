@@ -573,6 +573,14 @@
 
 #### zluda_inject/tests/helpers/
 - Overview — Helper test executables used by injection tests.
+- direct_cuinit.rs — Helper binary that calls cuInit directly.
+- do_cuinit_early.rs — Helper binary that triggers CUDA init early via helper DLL.
+- do_cuinit_late_clr.cs — C# helper that loads CUDA late (CLR test).
+- do_cuinit_late_clr.exe — Prebuilt .NET helper binary for late-init tests.
+- do_cuinit_late.rs — Helper binary that loads CUDA late.
+- do_cuinit.rs — Helper DLL that calls cuInit.
+- indirect_cuinit.rs — Helper binary that calls cuInit indirectly.
+- subprocess.rs — Helper binary for spawning subprocess scenarios.
 
 #### zluda_inject/tests/inject.rs
 - Overview — Test harness validating injected trace behavior.
