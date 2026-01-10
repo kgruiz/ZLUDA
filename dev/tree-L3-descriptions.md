@@ -212,6 +212,16 @@
 
 ## llvm_zluda/
 - Overview — LLVM integration crate; builds/links LLVM via `build.rs` and exposes compile/FFI utilities.
+- build.rs — Builds and links the LLVM/LLD toolchain via CMake and configures link flags.
+- Cargo.toml — Manifest for the LLVM integration crate.
+
+### llvm_zluda/src/
+- Overview — LLVM wrapper modules, compiler pipeline, and FFI helpers.
+- compile.rs — Links PTX/OCML/OCKL bitcode, runs LLVM passes, and emits AMDGPU objects/ELF via LLD.
+- ffi.rs — Extra LLVM C-API extensions and helpers used by ZLUDA.
+- lib.cpp — C++ shims compiled into `llvm_zluda_cpp` for LLVM extensions.
+- lib.rs — Crate entry that re-exports LLVM sys bindings and modules.
+- utils.rs — Safe wrappers around LLVM context/module/target machine and object utilities.
 
 ## ptx/
 - Overview — PTX translation/processing crate; depends on `ptx_parser`/`llvm_zluda` and includes PTX implementation bitcode.
