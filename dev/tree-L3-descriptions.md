@@ -365,6 +365,13 @@
 
 ##### ptx/src/test/spirv_fail/
 - Overview — SPIR-V failure fixtures used in tests.
+- const_ptr.ptx — SPIR-V failure fixture for constant pointer handling.
+- global_ptr.ptx — SPIR-V failure fixture for global pointer handling.
+- local_ptr.txt — SPIR-V failure fixture notes for local pointers.
+- param_entry_array_0.ptx — SPIR-V failure fixture for param entry arrays.
+- param_vector.ptx — SPIR-V failure fixture for parameter vectors.
+- shared_ptr.ptx — SPIR-V failure fixture for shared pointer handling.
+- shared_ptr2.ptx — SPIR-V failure fixture for alternative shared pointer case.
 
 ##### ptx/src/test/spirv_run/
 - Overview — SPIR-V run fixtures used in tests.
