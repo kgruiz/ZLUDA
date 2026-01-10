@@ -359,6 +359,9 @@
 
 ##### ptx/src/test/spirv_build/
 - Overview — SPIR-V build fixtures used in tests.
+- bar_sync.ptx — SPIR-V build fixture for barrier sync behavior.
+- global_extern_array.ptx — SPIR-V build fixture for global extern arrays.
+- param_func_array_0.ptx — SPIR-V build fixture for parameterized function arrays.
 
 ##### ptx/src/test/spirv_fail/
 - Overview — SPIR-V failure fixtures used in tests.
