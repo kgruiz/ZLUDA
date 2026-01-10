@@ -10,3 +10,8 @@
 - ptx/ — PTX translation/processing crate; depends on `ptx_parser`/`llvm_zluda` and includes PTX implementation bitcode.
 - ext/ — Third-party and FFI “sys” dependencies (detours, ROCm/HIP, HiGHS, LLVM project, etc.).
 - docs/ — mdBook documentation sources and configuration for the ZLUDA docs site.
+- compiler/ — Offline PTX-to-LLVM compiler crate (the `zoc` binary).
+- compiler/Cargo.toml — Manifest for the offline compiler binary and its dependencies.
+- compiler/src/ — Source directory for the compiler crate.
+- compiler/src/error.rs — Compiler-specific error type and conversions from PTX/parser errors.
+- compiler/src/main.rs — CLI entry point that parses options, reads PTX, generates LLVM/bitcode, and invokes `llvm_zluda` compilation (with optional HIP arch detection).
