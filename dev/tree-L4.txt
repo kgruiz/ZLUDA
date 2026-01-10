@@ -1,0 +1,455 @@
+.
+├── Cargo.lock
+├── Cargo.toml
+├── compiler
+│   ├── Cargo.toml
+│   └── src
+│       ├── error.rs
+│       └── main.rs
+├── cuda_base
+├── cuda_macros
+│   ├── build
+│   │   └── wrapper.h
+│   ├── Cargo.toml
+│   └── src
+│       ├── cublas.rs
+│       ├── cublaslt_internal.rs
+│       ├── cublaslt.rs
+│       ├── cuda.rs
+│       ├── cudnn8.rs
+│       ├── cudnn9.rs
+│       ├── cufft.rs
+│       ├── cusparse.rs
+│       ├── lib.rs
+│       └── nvml.rs
+├── cuda_types
+│   ├── Cargo.toml
+│   └── src
+│       ├── cublas.rs
+│       ├── cublaslt.rs
+│       ├── cuda.rs
+│       ├── cudnn.rs
+│       ├── cudnn8.rs
+│       ├── cudnn9.rs
+│       ├── cufft.rs
+│       ├── cusparse.rs
+│       ├── dark_api.rs
+│       ├── lib.rs
+│       └── nvml.rs
+├── dark_api
+│   ├── Cargo.toml
+│   └── src
+│       ├── fatbin.rs
+│       └── lib.rs
+├── detours-sys
+│   ├── build
+│   │   └── wrapper.h
+│   ├── build.rs
+│   ├── Cargo.toml
+│   ├── LICENSE-APACHE
+│   ├── LICENSE-MIT
+│   ├── README.md
+│   └── src
+│       ├── bundled_bindings.rs
+│       └── lib.rs
+├── dev
+│   ├── diagram.md
+│   ├── explain.md
+│   ├── explanation.md
+│   ├── tree-L3-descriptions.md
+│   ├── tree-L3.txt
+│   └── tree-L4.txt
+├── docs
+│   ├── book.toml
+│   └── src
+│       ├── building.md
+│       ├── faq.md
+│       ├── quick_start.md
+│       ├── SUMMARY.md
+│       └── troubleshooting.md
+├── ext
+│   ├── detours
+│   │   ├── CREDITS.TXT
+│   │   ├── LICENSE.md
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── samples
+│   │   │   ├── comeasy
+│   │   │   ├── commem
+│   │   │   ├── common.mak
+│   │   │   ├── cping
+│   │   │   ├── disas
+│   │   │   ├── dtest
+│   │   │   ├── dumpe
+│   │   │   ├── dumpi
+│   │   │   ├── dynamic_alloc
+│   │   │   ├── echo
+│   │   │   ├── einst
+│   │   │   ├── excep
+│   │   │   ├── findfunc
+│   │   │   ├── impmunge
+│   │   │   ├── Makefile
+│   │   │   ├── member
+│   │   │   ├── opengl
+│   │   │   ├── README.TXT
+│   │   │   ├── region
+│   │   │   ├── setdll
+│   │   │   ├── simple
+│   │   │   ├── slept
+│   │   │   ├── syelog
+│   │   │   ├── talloc
+│   │   │   ├── traceapi
+│   │   │   ├── tracebld
+│   │   │   ├── tracelnk
+│   │   │   ├── tracemem
+│   │   │   ├── tracereg
+│   │   │   ├── traceser
+│   │   │   ├── tracessl
+│   │   │   ├── tracetcp
+│   │   │   ├── tryman
+│   │   │   └── withdll
+│   │   ├── src
+│   │   │   ├── creatwth.cpp
+│   │   │   ├── detours.cpp
+│   │   │   ├── detours.h
+│   │   │   ├── detver.h
+│   │   │   ├── disasm.cpp
+│   │   │   ├── disolarm.cpp
+│   │   │   ├── disolarm64.cpp
+│   │   │   ├── disolia64.cpp
+│   │   │   ├── disolx64.cpp
+│   │   │   ├── disolx86.cpp
+│   │   │   ├── image.cpp
+│   │   │   ├── Makefile
+│   │   │   ├── modules.cpp
+│   │   │   └── uimports.cpp
+│   │   ├── system.mak
+│   │   ├── tests
+│   │   │   ├── catch.hpp
+│   │   │   ├── corruptor.cpp
+│   │   │   ├── corruptor.h
+│   │   │   ├── main.cpp
+│   │   │   ├── Makefile
+│   │   │   ├── test_image_api.cpp
+│   │   │   └── test_module_api.cpp
+│   │   └── vc
+│   │       ├── Detours.sln
+│   │       ├── Detours.vcxproj
+│   │       └── Detours.vcxproj.filters
+│   ├── HiGHS
+│   ├── highs-sys
+│   │   ├── build.rs
+│   │   ├── Cargo.toml
+│   │   ├── install-dependencies.sh
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── c_bindings.rs
+│   │   │   └── lib.rs
+│   │   ├── tests
+│   │   │   ├── test_highs_call.rs
+│   │   │   └── test_highs_functions.rs
+│   │   └── wrapper.h
+│   ├── hip_runtime-sys
+│   │   ├── build.rs
+│   │   ├── Cargo.toml
+│   │   └── src
+│   │       └── lib.rs
+│   ├── hipblaslt-sys
+│   │   ├── build.rs
+│   │   ├── Cargo.toml
+│   │   └── src
+│   │       └── lib.rs
+│   ├── llvm-project
+│   ├── miopen-sys
+│   │   ├── build.rs
+│   │   ├── Cargo.toml
+│   │   └── src
+│   │       └── lib.rs
+│   ├── rocblas-sys
+│   │   ├── build.rs
+│   │   ├── Cargo.toml
+│   │   └── src
+│   │       └── lib.rs
+│   └── rocm_smi-sys
+│       ├── build.rs
+│       ├── Cargo.toml
+│       └── src
+│           └── lib.rs
+├── format
+│   ├── Cargo.toml
+│   └── src
+│       ├── dark_api.rs
+│       ├── dnn8.rs
+│       ├── dnn9.rs
+│       ├── format_generated_blas.rs
+│       ├── format_generated_blaslt_internal.rs
+│       ├── format_generated_blaslt.rs
+│       ├── format_generated_dnn8.rs
+│       ├── format_generated_dnn9.rs
+│       ├── format_generated_fft.rs
+│       ├── format_generated_nvml.rs
+│       ├── format_generated_sparse.rs
+│       ├── format_generated.rs
+│       └── lib.rs
+├── geekbench.svg
+├── LICENSE-APACHE
+├── LICENSE-MIT
+├── llvm_zluda
+│   ├── build.rs
+│   ├── Cargo.toml
+│   └── src
+│       ├── compile.rs
+│       ├── device-libs
+│       │   ├── LICENSE.TXT
+│       │   ├── ockl.bc
+│       │   ├── ocml.bc
+│       │   └── README.md
+│       ├── ffi.rs
+│       ├── lib.cpp
+│       ├── lib.rs
+│       └── utils.rs
+├── ptx
+│   ├── Cargo.toml
+│   ├── lib
+│   │   ├── zluda_ptx_impl.bc
+│   │   └── zluda_ptx_impl.cpp
+│   └── src
+│       ├── lib.rs
+│       ├── pass
+│       │   ├── deparamize_functions.rs
+│       │   ├── expand_operands.rs
+│       │   ├── fix_special_registers.rs
+│       │   ├── hoist_globals.rs
+│       │   ├── insert_explicit_load_store.rs
+│       │   ├── insert_implicit_conversions.rs
+│       │   ├── insert_post_saturation.rs
+│       │   ├── instruction_mode_to_global_mode
+│       │   ├── llvm
+│       │   ├── mod.rs
+│       │   ├── normalize_basic_blocks.rs
+│       │   ├── normalize_identifiers.rs
+│       │   ├── normalize_predicates.rs
+│       │   ├── remove_unreachable_basic_blocks.rs
+│       │   ├── replace_instructions_with_functions_fp_required.rs
+│       │   ├── replace_instructions_with_functions.rs
+│       │   ├── replace_known_functions.rs
+│       │   ├── resolve_function_pointers.rs
+│       │   └── test
+│       └── test
+│           ├── _Z9vectorAddPKfS0_Pfi.ptx
+│           ├── ll
+│           ├── mod.rs
+│           ├── operands.ptx
+│           ├── spirv_build
+│           ├── spirv_fail
+│           ├── spirv_run
+│           ├── vectorAdd_11.ptx
+│           └── vectorAdd_kernel64.ptx
+├── ptx_parser
+│   ├── Cargo.toml
+│   └── src
+│       ├── ast.rs
+│       ├── check_args.py
+│       └── lib.rs
+├── ptx_parser_macros
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── ptx_parser_macros_impl
+│   ├── Cargo.toml
+│   └── src
+│       ├── lib.rs
+│       └── parser.rs
+├── ptxas
+│   ├── Cargo.toml
+│   └── src
+│       └── main.rs
+├── README.md
+├── xtask
+│   ├── Cargo.toml
+│   └── src
+│       └── main.rs
+├── zluda
+│   ├── bin
+│   │   └── nvcudart_hybrid64.dll
+│   ├── build.rs
+│   ├── Cargo.toml
+│   └── src
+│       ├── impl
+│       │   ├── context.rs
+│       │   ├── device.rs
+│       │   ├── driver.rs
+│       │   ├── event.rs
+│       │   ├── function.rs
+│       │   ├── graph.rs
+│       │   ├── hipfix.rs
+│       │   ├── kernel.rs
+│       │   ├── library.rs
+│       │   ├── memory.rs
+│       │   ├── mod.rs
+│       │   ├── module.rs
+│       │   ├── os_unix.rs
+│       │   ├── os_win.rs
+│       │   ├── pointer.rs
+│       │   └── stream.rs
+│       ├── lib.rs
+│       ├── os_unix.rs
+│       ├── os_win.rs
+│       └── tests.rs
+├── zluda_bindgen
+│   ├── build
+│   │   ├── cublas_wrapper.h
+│   │   ├── cublasLt_internal.h
+│   │   ├── cuda_wrapper.h
+│   │   ├── cudnn_v8
+│   │   │   ├── cudnn_adv_infer.h
+│   │   │   ├── cudnn_adv_train.h
+│   │   │   ├── cudnn_backend.h
+│   │   │   ├── cudnn_cnn_infer.h
+│   │   │   ├── cudnn_cnn_train.h
+│   │   │   ├── cudnn_ops_infer.h
+│   │   │   ├── cudnn_ops_train.h
+│   │   │   └── cudnn_version.h
+│   │   ├── cufft_wraper.h
+│   │   └── decompile_cublaslt_internal.py
+│   ├── Cargo.toml
+│   └── src
+│       ├── main.rs
+│       └── process_table.rs
+├── zluda_blas
+│   ├── build.rs
+│   ├── Cargo.toml
+│   └── src
+│       ├── impl.rs
+│       └── lib.rs
+├── zluda_blaslt
+│   ├── build.rs
+│   ├── Cargo.toml
+│   └── src
+│       ├── impl.rs
+│       └── lib.rs
+├── zluda_cache
+│   ├── Cargo.toml
+│   ├── diesel.toml
+│   ├── migrations
+│   │   └── 2025-08-04-203347_create_initial
+│   │       ├── down.sql
+│   │       └── up.sql
+│   └── src
+│       ├── lib.rs
+│       ├── models.rs
+│       └── schema.rs
+├── zluda_common
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_dnn
+│   ├── Cargo.toml
+│   └── src
+│       ├── impl.rs
+│       └── lib.rs
+├── zluda_dnn8
+│   ├── build.rs
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_dnn9
+│   ├── build.rs
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_fft
+│   ├── Cargo.toml
+│   └── src
+│       ├── impl.rs
+│       └── lib.rs
+├── zluda_inject
+│   ├── build.rs
+│   ├── Cargo.toml
+│   ├── src
+│   │   ├── args.rs
+│   │   ├── bin.rs
+│   │   ├── main.rs
+│   │   └── win.rs
+│   └── tests
+│       ├── helpers
+│       │   ├── direct_cuinit.rs
+│       │   ├── do_cuinit_early.rs
+│       │   ├── do_cuinit_late_clr.cs
+│       │   ├── do_cuinit_late_clr.exe
+│       │   ├── do_cuinit_late.rs
+│       │   ├── do_cuinit.rs
+│       │   ├── indirect_cuinit.rs
+│       │   └── subprocess.rs
+│       └── inject.rs
+├── zluda_ld
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_ml
+│   ├── Cargo.toml
+│   └── src
+│       ├── impl_common.rs
+│       ├── impl_unix.rs
+│       ├── impl_win.rs
+│       └── lib.rs
+├── zluda_precompile
+│   ├── Cargo.toml
+│   └── src
+│       └── main.rs
+├── zluda_redirect
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_sparse
+│   ├── Cargo.toml
+│   └── src
+│       ├── impl.rs
+│       └── lib.rs
+├── zluda_trace
+│   ├── Cargo.toml
+│   └── src
+│       ├── dark_api.rs
+│       ├── lib.rs
+│       ├── log.rs
+│       ├── os_unix.rs
+│       ├── os_win.rs
+│       └── trace.rs
+├── zluda_trace_blas
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_trace_blaslt
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_trace_common
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_trace_dnn8
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_trace_dnn9
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_trace_fft
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_trace_nvml
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+├── zluda_trace_sparse
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+└── zluda_windows
+    ├── Cargo.toml
+    └── src
+        └── lib.rs
+
+156 directories, 297 files
