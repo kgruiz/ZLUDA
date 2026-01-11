@@ -7,3 +7,6 @@
 	path = ext/HiGHS
 	url = https://github.com/ERGO-Code/HiGHS.git
 	shallow = true
+[submodule "zluda-dev"]
+	path = zluda-dev
+	url = git@github.com:kgruiz/ZLUDA-dev.git
